@@ -26,6 +26,10 @@ class CategoriesRepository {
 
     return category;
   }
+
+  list(): Category[] {
+    return this.categories;
+  }
 }
 
 export { CategoriesRepository };
