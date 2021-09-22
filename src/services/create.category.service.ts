@@ -1,10 +1,8 @@
 import { Category } from '../models/Category';
-import { CategoriesRepository } from '../repositories/categories.repositories';
-
-interface ICreateCategoryInput {
-  name: string;
-  description: string;
-}
+import {
+  ICreateCategoryInput,
+  ICategoriesRepository,
+} from '../repositories/categories.repository.interface';
 
 /**
  * Single Responsibility Principle
@@ -16,7 +14,7 @@ interface ICreateCategoryInput {
  * Our category doesn't need to know the repository
  */
 class CreateCategoryService {
-  constructor(private categoriesRepository: CategoriesRepository) {}
+  constructor(private categoriesRepository: ICategoriesRepository) {}
 
   execute({ name, description }: ICreateCategoryInput): Category {
     const categoryAlreadyExists = this.categoriesRepository.findByName(name);
