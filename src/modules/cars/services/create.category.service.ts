@@ -2,7 +2,7 @@ import { Category } from '../models/Category';
 import {
   ICreateCategoryInput,
   ICategoriesRepository,
-} from '../repositories/categories.repository.interface';
+} from '../repositories/categories/categories.interface';
 
 /**
  * Single Responsibility Principle

@@ -1,12 +1,12 @@
 import { Request, Response, Router } from 'express';
 
-import { CategoriesRepository } from '../modules/cars/repositories/categories.repository';
-import { PostgresCategoriesRepository } from '../modules/cars/repositories/postgres.categories.repository';
+import { CategoriesRepository } from '../modules/cars/repositories/categories/categories.repository';
 import { CreateCategoryService } from '../modules/cars/services/create.category.service';
+// import { PostgresCategoriesRepository } from '../modules/cars/repositories/postgres.categories.repository';
 
 const categoriesRoutes = Router();
 const categoriesRepository = new CategoriesRepository();
-const postgresCategoriesRepository = new PostgresCategoriesRepository();
+// const postgresCategoriesRepository = new PostgresCategoriesRepository();
 
 categoriesRoutes.post('/', (request: Request, response: Response) => {
   const { name, description } = request.body;
@@ -26,4 +26,4 @@ categoriesRoutes.get('/', (request, response) => {
   return response.status(200).json(allCategories);
 });
 
-export default categoriesRoutes;
+export { categoriesRoutes };

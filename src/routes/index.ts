@@ -1,1 +1,2 @@
-export { default as categoriesRoutes } from './categories.routes';
+export * from './categories.routes';
+export * from './specifications.routes';
