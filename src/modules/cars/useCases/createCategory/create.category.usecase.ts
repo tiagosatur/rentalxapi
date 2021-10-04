@@ -1,8 +1,8 @@
-import { Category } from '../models/Category';
+import { Category } from '../../models/Category';
 import {
   ICreateCategoryInput,
   ICategoriesRepository,
-} from '../repositories/categories/categories.interface';
+} from '../../repositories/categories/categories.interface';
 
 /**
  * Single Responsibility Principle
@@ -13,7 +13,7 @@ import {
  * Dependency Inversion Principle
  * Our category doesn't need to know the repository
  */
-class CreateCategoryService {
+class CreateCategoryUseCase {
   constructor(private categoriesRepository: ICategoriesRepository) {}
 
   execute({ name, description }: ICreateCategoryInput): Category {
@@ -28,4 +28,4 @@ class CreateCategoryService {
   }
 }
 
-export { CreateCategoryService };
+export { CreateCategoryUseCase };
